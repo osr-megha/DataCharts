@@ -17,8 +17,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //set 'credentials: true' to pass --> headers, cookies, etc to browser/frontend
+
+const FRONTEND_URL = "http://localhost:3000"
+
 app.use(cors({
-    origin: [process.env.FRONTEND_URL],
+    origin: [FRONTEND_URL],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }))
